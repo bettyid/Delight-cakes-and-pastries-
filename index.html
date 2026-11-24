@@ -2,32 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Delight Cakes &amp; Pastries</title>
-  <meta name="description" content="Rich chocolate cakes, brownies and pastries, baked fresh to order.">
+  <meta name="description" content="Rich chocolate cakes, brownies and pastries, baked slow and made fresh to order.">
+  <meta name="theme-color" content="#4D3A4D">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="hero__media" aria-hidden="true">
-      <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/poster.jpg">
-        <source src="assets/hero.mp4" type="video/mp4">
-      </video>
-    </div>
+  <!-- Background: still frame until the visitor scrolls, then it melts into motion -->
+  <div class="bg" aria-hidden="true">
+    <video class="bg__video" muted loop playsinline preload="auto" poster="assets/poster.jpg">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="bg__wash"></div>
+  </div>
 
+  <header class="hero">
     <nav class="nav">
-      <a class="nav__brand" href="#">Delight</a>
+      <a class="nav__brand" href="#top">Delight</a>
       <ul class="nav__links">
-        <li><a href="#menu">Menu</a></li>
+        <li><a href="#bakes">Bakes</a></li>
         <li><a href="#about">Our story</a></li>
         <li><a href="#order" class="nav__cta">Order</a></li>
       </ul>
     </nav>
 
-    <div class="hero__content">
+    <div class="hero__content" id="top">
       <h1 class="hero__title">
         <span class="line"><span>Rich enough</span></span>
         <span class="line"><span>to make time stop.</span></span>
@@ -35,15 +38,17 @@
       <p class="hero__lead">Chocolate cakes, brownies and pastries, baked slow and made fresh to order.</p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="#order">Order a cake</a>
-        <a class="btn btn--ghost" href="#menu">See the menu</a>
+        <a class="btn btn--ghost" href="#bakes">See the bakes</a>
       </div>
     </div>
+
+    <p class="hero__cue">Scroll to start the bake</p>
   </header>
 
   <main>
-    <section class="menu" id="menu">
+    <section class="panel bakes" id="bakes">
       <h2 class="section__title">Fresh from the oven</h2>
-      <ul class="menu__list">
+      <ul class="bakes__list">
         <li>
           <h3>Celebration cakes</h3>
           <p>Layered chocolate, caramel and fruit cakes for birthdays, weddings and everything in between.</p>
@@ -59,14 +64,23 @@
       </ul>
     </section>
 
-    <section class="story" id="about">
+    <section class="panel panel--plum story" id="about">
       <p class="story__text">We bake in small batches with real chocolate and slow-melted caramel, so every order tastes like it was made for you. Because it was.</p>
     </section>
 
-    <section class="order" id="order">
+    <section class="panel steps">
+      <h2 class="section__title">How ordering works</h2>
+      <ol class="steps__list">
+        <li><h3>Tell us what you want</h3><p>Share the date, the size and the flavour.</p></li>
+        <li><h3>We confirm the details</h3><p>You get the price and the pickup or delivery plan.</p></li>
+        <li><h3>We bake it fresh</h3><p>Your order is made the day it is needed.</p></li>
+      </ol>
+    </section>
+
+    <section class="panel order" id="order">
       <h2 class="section__title">What are you celebrating?</h2>
-      <p>Tell us the date, the size and the flavour. We'll confirm your order and delivery details.</p>
-      <a class="btn btn--primary" href="#order">Place an order</a>
+      <p>Tell us what you need and we will take it from there.</p>
+      <a class="btn btn--dark" href="#order">Place an order</a>
     </section>
   </main>
 
@@ -74,5 +88,7 @@
     <span class="footer__brand">Delight Cakes &amp; Pastries</span>
     <span>&copy; 2026</span>
   </footer>
+
+  <script src="main.js" defer></script>
 </body>
 </html>
