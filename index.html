@@ -3,92 +3,93 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Delight Cakes &amp; Pastries</title>
-  <meta name="description" content="Cakes, brownies and pastries, baked slow and made fresh to order.">
-  <meta name="theme-color" content="#EADADA">
+  <title>Delight Cakes &amp; Pastries | Freshly baked, made with love</title>
+  <meta name="description" content="Freshly baked cakes, brownies and pastries, beautifully crafted and made to order.">
+  <meta name="theme-color" content="#EF93AC">
   <meta property="og:title" content="Delight Cakes & Pastries">
-  <meta property="og:description" content="Rich enough to make time stop.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/frames/f_0001.webp">
+  <meta property="og:description" content="Life is sweeter with Delight.">
+  <link rel="preload" as="image" href="assets/poster.jpg">
+  <link rel="preload" href="fonts/bagel-fat-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/pacifico-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="loadbar" aria-hidden="true"><i></i></div>
-
-  <header class="topbar" id="topbar">
-    <a class="topbar__brand" href="#top">Delight</a>
-    <a class="topbar__order" href="#order">Order</a>
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#home" aria-label="Delight Cakes and Pastries, home">
+      <svg viewBox="0 0 48 48" width="38" height="38" aria-hidden="true"><path d="M10 24h28l-4 17a3 3 0 0 1-3 2H17a3 3 0 0 1-3-2z" fill="currentColor"/><path d="M12 24c-3 0-4-5 0-6 0-5 5-8 9-6 2-4 9-4 11 0 5-1 8 5 4 8-1 3-3 4-4 4z" fill="currentColor"/><circle cx="24" cy="7" r="3" fill="currentColor"/></svg>
+      <span>Delight</span>
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#home" aria-current="page">Home</a>
+      <a href="#bakes">Menu</a>
+      <a href="#about">About</a>
+      <a href="#order">Contact</a>
+    </nav>
+    <a class="nav__order" href="#order">Order</a>
   </header>
 
-  <!-- The cake film. It sits still until you scroll, then the scroll drives it. -->
-  <section class="stage" id="stage">
-    <div class="stage__pin" id="top">
-      <canvas class="stage__canvas" id="film" aria-hidden="true"></canvas>
-      <div class="stage__tint" id="tint" aria-hidden="true"></div>
-      <div class="stage__wash" aria-hidden="true"></div>
-
-      <div class="chapters">
-        <article class="chap chap--hero" data-from="0" data-to="0.75" data-tint="none">
-          <p class="chap__brand">Delight Cakes &amp; Pastries</p>
-          <h1 class="chap__title"><span class="ln"><span>Rich enough</span></span><span class="ln"><span>to make time stop.</span></span></h1>
-          <p class="chap__text">Cakes, brownies and pastries, baked slow and made fresh to order.</p>
-        </article>
-
-        <article class="chap" data-from="0.95" data-to="2.1" data-tint="orchid">
-          <h2 class="chap__title"><span class="ln"><span>Slow-poured</span></span><span class="ln"><span>chocolate.</span></span></h2>
-        </article>
-
-        <article class="chap chap--r" data-from="2.3" data-to="3.2" data-tint="plum">
-          <h2 class="chap__title"><span class="ln"><span>Dark, glossy,</span></span><span class="ln"><span>unhurried.</span></span></h2>
-        </article>
-
-        <article class="chap" data-from="3.45" data-to="5.1" data-tint="orchid">
-          <h2 class="chap__title"><span class="ln"><span>Fruit folded</span></span><span class="ln"><span>into brownie.</span></span></h2>
-        </article>
-
-        <article class="chap chap--r" data-from="5.3" data-to="6.2" data-tint="pink">
-          <h2 class="chap__title"><span class="ln"><span>Pretty enough</span></span><span class="ln"><span>to hesitate over.</span></span></h2>
-        </article>
-
-        <article class="chap" data-from="6.45" data-to="8.1" data-tint="plum">
-          <h2 class="chap__title"><span class="ln"><span>Caramel that</span></span><span class="ln"><span>takes its time.</span></span></h2>
-        </article>
-
-        <article class="chap chap--r" data-from="8.3" data-to="9.1" data-tint="pink">
-          <h2 class="chap__title"><span class="ln"><span>Soft. Sweet.</span></span><span class="ln"><span>Gone fast.</span></span></h2>
-        </article>
-
-        <article class="chap" data-from="9.35" data-to="10.7" data-tint="orchid">
-          <h2 class="chap__title"><span class="ln"><span>Every layer,</span></span><span class="ln"><span>on purpose.</span></span></h2>
-        </article>
-
-        <article class="chap chap--end" data-from="11.0" data-to="99" data-tint="plum">
-          <h2 class="chap__title"><span class="ln"><span>Baked fresh.</span></span><span class="ln"><span>Made for you.</span></span></h2>
-          <a class="btn" href="#order">Order now</a>
-        </article>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero__media" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/poster.jpg">
+          <source src="assets/hero.mp4" type="video/mp4">
+        </video>
       </div>
 
-      <p class="cue" id="cue"><span>Scroll to melt</span><i></i></p>
-      <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+      <div class="hero__copy">
+        <p class="hero__script">Life is sweeter with <i></i></p>
+        <h1 class="hero__word" aria-label="Delight">
+          <span aria-hidden="true">D</span><span aria-hidden="true">e</span><span aria-hidden="true">l</span><span aria-hidden="true">i</span><span aria-hidden="true">g</span><span aria-hidden="true">h</span><span aria-hidden="true">t</span>
+        </h1>
+        <p class="hero__tag">
+          Freshly baked. Beautifully crafted.<br> Made with love.
+          <svg class="heart" viewBox="0 0 40 36" width="40" height="36" aria-hidden="true"><path d="M20 33C8 25 3 18 4 11 5 5 12 3 16 8l4 5 4-6c4-5 11-3 12 3 1 7-4 14-16 20z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        </p>
+        <a class="pill" href="#order">
+          <span>Order Now</span>
+          <b aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></b>
+        </a>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Freshly baked</span><span>Made to order</span><span>Beautifully crafted</span><span>Made with love</span>
+        <span>Freshly baked</span><span>Made to order</span><span>Beautifully crafted</span><span>Made with love</span>
+      </div>
     </div>
-  </section>
 
-  <section class="bakes" id="bakes">
-    <ul class="bakes__list">
-      <li><h2>Celebration cakes</h2><p>Layered chocolate, caramel and fruit cakes for birthdays, weddings and everything in between.</p></li>
-      <li><h2>Brownies</h2><p>Dense, glossy and topped with toasted walnuts. Sold by the box.</p></li>
-      <li><h2>Pastries</h2><p>Small bakes for tea, gifting and office treats.</p></li>
-    </ul>
-  </section>
+    <section class="bakes" id="bakes">
+      <h2 class="title">Fresh from<br>the oven</h2>
+      <div class="cards">
+        <article class="card card--rose reveal">
+          <h3>Celebration cakes</h3>
+          <p>Layered chocolate, caramel and fruit cakes for birthdays, weddings and everything in between.</p>
+          <a class="card__link" href="#order">Order this</a>
+        </article>
+        <article class="card card--plum reveal">
+          <h3>Brownies</h3>
+          <p>Dense, glossy and topped with toasted walnuts. Sold by the box.</p>
+          <a class="card__link" href="#order">Order this</a>
+        </article>
+        <article class="card card--orchid reveal">
+          <h3>Pastries</h3>
+          <p>Small bakes for tea, gifting and office treats.</p>
+          <a class="card__link" href="#order">Order this</a>
+        </article>
+      </div>
+    </section>
 
-  <section class="order" id="order">
-    <h2 class="order__title">What are you<br>celebrating?</h2>
-    <p class="order__text">Tell us the date, the size and the flavour, and we will take it from there.</p>
-    <a class="btn btn--plum" href="#order">Place an order</a>
-  </section>
+    <section class="about" id="about">
+      <p class="about__text reveal">Small batches, big flavour, and every order baked fresh for the day you need it.</p>
+    </section>
+
+    <section class="order" id="order">
+      <h2 class="title title--light">What are you<br>celebrating?</h2>
+      <p class="order__text">Tell us the date, the size and the flavour, and we will take it from there.</p>
+      <a class="pill pill--pink" href="#order"><span>Place an order</span><b aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></b></a>
+    </section>
+  </main>
 
   <footer class="footer">
     <span class="footer__brand">Delight Cakes &amp; Pastries</span>
