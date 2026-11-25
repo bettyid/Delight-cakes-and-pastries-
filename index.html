@@ -4,85 +4,91 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Delight Cakes &amp; Pastries</title>
-  <meta name="description" content="Rich chocolate cakes, brownies and pastries, baked slow and made fresh to order.">
-  <meta name="theme-color" content="#4D3A4D">
+  <meta name="description" content="Cakes, brownies and pastries, baked slow and made fresh to order.">
+  <meta name="theme-color" content="#EADADA">
+  <meta property="og:title" content="Delight Cakes & Pastries">
+  <meta property="og:description" content="Rich enough to make time stop.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/frames/f_0001.webp">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Background: still frame until the visitor scrolls, then it melts into motion -->
-  <div class="bg" aria-hidden="true">
-    <video class="bg__video" muted loop playsinline preload="auto" poster="assets/poster.jpg">
-      <source src="assets/hero.mp4" type="video/mp4">
-    </video>
-    <div class="bg__wash"></div>
-  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="loadbar" aria-hidden="true"><i></i></div>
 
-  <header class="hero">
-    <nav class="nav">
-      <a class="nav__brand" href="#top">Delight</a>
-      <ul class="nav__links">
-        <li><a href="#bakes">Bakes</a></li>
-        <li><a href="#about">Our story</a></li>
-        <li><a href="#order" class="nav__cta">Order</a></li>
-      </ul>
-    </nav>
-
-    <div class="hero__content" id="top">
-      <h1 class="hero__title">
-        <span class="line"><span>Rich enough</span></span>
-        <span class="line"><span>to make time stop.</span></span>
-      </h1>
-      <p class="hero__lead">Chocolate cakes, brownies and pastries, baked slow and made fresh to order.</p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#order">Order a cake</a>
-        <a class="btn btn--ghost" href="#bakes">See the bakes</a>
-      </div>
-    </div>
-
-    <p class="hero__cue">Scroll to start the bake</p>
+  <header class="topbar" id="topbar">
+    <a class="topbar__brand" href="#top">Delight</a>
+    <a class="topbar__order" href="#order">Order</a>
   </header>
 
-  <main>
-    <section class="panel bakes" id="bakes">
-      <h2 class="section__title">Fresh from the oven</h2>
-      <ul class="bakes__list">
-        <li>
-          <h3>Celebration cakes</h3>
-          <p>Layered chocolate, caramel and fruit cakes for birthdays, weddings and everything in between.</p>
-        </li>
-        <li>
-          <h3>Brownies</h3>
-          <p>Dense, glossy and topped with toasted walnuts. Sold by the box.</p>
-        </li>
-        <li>
-          <h3>Pastries</h3>
-          <p>Small bakes for tea, gifting and office treats.</p>
-        </li>
-      </ul>
-    </section>
+  <!-- The cake film. It sits still until you scroll, then the scroll drives it. -->
+  <section class="stage" id="stage">
+    <div class="stage__pin" id="top">
+      <canvas class="stage__canvas" id="film" aria-hidden="true"></canvas>
+      <div class="stage__tint" id="tint" aria-hidden="true"></div>
+      <div class="stage__wash" aria-hidden="true"></div>
 
-    <section class="panel panel--plum story" id="about">
-      <p class="story__text">We bake in small batches with real chocolate and slow-melted caramel, so every order tastes like it was made for you. Because it was.</p>
-    </section>
+      <div class="chapters">
+        <article class="chap chap--hero" data-from="0" data-to="0.75" data-tint="none">
+          <p class="chap__brand">Delight Cakes &amp; Pastries</p>
+          <h1 class="chap__title"><span class="ln"><span>Rich enough</span></span><span class="ln"><span>to make time stop.</span></span></h1>
+          <p class="chap__text">Cakes, brownies and pastries, baked slow and made fresh to order.</p>
+        </article>
 
-    <section class="panel steps">
-      <h2 class="section__title">How ordering works</h2>
-      <ol class="steps__list">
-        <li><h3>Tell us what you want</h3><p>Share the date, the size and the flavour.</p></li>
-        <li><h3>We confirm the details</h3><p>You get the price and the pickup or delivery plan.</p></li>
-        <li><h3>We bake it fresh</h3><p>Your order is made the day it is needed.</p></li>
-      </ol>
-    </section>
+        <article class="chap" data-from="0.95" data-to="2.1" data-tint="orchid">
+          <h2 class="chap__title"><span class="ln"><span>Slow-poured</span></span><span class="ln"><span>chocolate.</span></span></h2>
+        </article>
 
-    <section class="panel order" id="order">
-      <h2 class="section__title">What are you celebrating?</h2>
-      <p>Tell us what you need and we will take it from there.</p>
-      <a class="btn btn--dark" href="#order">Place an order</a>
-    </section>
-  </main>
+        <article class="chap chap--r" data-from="2.3" data-to="3.2" data-tint="plum">
+          <h2 class="chap__title"><span class="ln"><span>Dark, glossy,</span></span><span class="ln"><span>unhurried.</span></span></h2>
+        </article>
+
+        <article class="chap" data-from="3.45" data-to="5.1" data-tint="orchid">
+          <h2 class="chap__title"><span class="ln"><span>Fruit folded</span></span><span class="ln"><span>into brownie.</span></span></h2>
+        </article>
+
+        <article class="chap chap--r" data-from="5.3" data-to="6.2" data-tint="pink">
+          <h2 class="chap__title"><span class="ln"><span>Pretty enough</span></span><span class="ln"><span>to hesitate over.</span></span></h2>
+        </article>
+
+        <article class="chap" data-from="6.45" data-to="8.1" data-tint="plum">
+          <h2 class="chap__title"><span class="ln"><span>Caramel that</span></span><span class="ln"><span>takes its time.</span></span></h2>
+        </article>
+
+        <article class="chap chap--r" data-from="8.3" data-to="9.1" data-tint="pink">
+          <h2 class="chap__title"><span class="ln"><span>Soft. Sweet.</span></span><span class="ln"><span>Gone fast.</span></span></h2>
+        </article>
+
+        <article class="chap" data-from="9.35" data-to="10.7" data-tint="orchid">
+          <h2 class="chap__title"><span class="ln"><span>Every layer,</span></span><span class="ln"><span>on purpose.</span></span></h2>
+        </article>
+
+        <article class="chap chap--end" data-from="11.0" data-to="99" data-tint="plum">
+          <h2 class="chap__title"><span class="ln"><span>Baked fresh.</span></span><span class="ln"><span>Made for you.</span></span></h2>
+          <a class="btn" href="#order">Order now</a>
+        </article>
+      </div>
+
+      <p class="cue" id="cue"><span>Scroll to melt</span><i></i></p>
+      <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+    </div>
+  </section>
+
+  <section class="bakes" id="bakes">
+    <ul class="bakes__list">
+      <li><h2>Celebration cakes</h2><p>Layered chocolate, caramel and fruit cakes for birthdays, weddings and everything in between.</p></li>
+      <li><h2>Brownies</h2><p>Dense, glossy and topped with toasted walnuts. Sold by the box.</p></li>
+      <li><h2>Pastries</h2><p>Small bakes for tea, gifting and office treats.</p></li>
+    </ul>
+  </section>
+
+  <section class="order" id="order">
+    <h2 class="order__title">What are you<br>celebrating?</h2>
+    <p class="order__text">Tell us the date, the size and the flavour, and we will take it from there.</p>
+    <a class="btn btn--plum" href="#order">Place an order</a>
+  </section>
 
   <footer class="footer">
     <span class="footer__brand">Delight Cakes &amp; Pastries</span>
