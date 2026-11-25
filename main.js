@@ -18,10 +18,12 @@
   var select = document.getElementById('f-cake');
   cakes.forEach(function (c) {
     var o = document.createElement('option');
-    o.value = c.dataset.name; o.textContent = c.querySelector('.price').textContent.replace(/^\s+|\s+$/g, '') + "  |  " + c.dataset.name;
+    o.value = c.dataset.name;
     o.textContent = c.dataset.name + " (" + c.querySelector('.price').textContent.trim() + ")";
     select.appendChild(o);
   });
+  var custom = document.querySelector('.custom');
+  var oc = document.createElement('option'); oc.value = custom.dataset.name; oc.textContent = "Custom cake (we will quote you)"; select.appendChild(oc);
 
   // "Order" button on each cake opens WhatsApp straight away
   cakes.forEach(function (c) {
@@ -30,6 +32,10 @@
                 " (" + c.querySelector('.price').textContent.trim() + "). Is it available?";
       openWhatsApp(msg);
     });
+  });
+
+  custom.querySelector('.order-btn').addEventListener('click', function () {
+    openWhatsApp("Hello " + BRAND + "! I would like a custom cake. Please tell me what you need from me for a quote.");
   });
 
   // Booking form builds the WhatsApp message

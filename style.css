@@ -1,5 +1,11 @@
 @font-face { font-family: "Bagel Fat One"; src: url(fonts/bagel-fat-one-latin-400-normal.woff2) format("woff2"); font-display: swap; }
 @font-face { font-family: "Pacifico"; src: url(fonts/pacifico-latin-400-normal.woff2) format("woff2"); font-display: swap; }
+/* Bagel Fat One has no Naira sign, so use a bold rounded one just for that character */
+@font-face { font-family: "Naira"; font-weight: 400; src: url(fonts/nunito-latin-ext-700-normal.woff2) format("woff2"); font-display: swap; unicode-range: U+20A6; }
+/* latin-ext: contains the Naira sign (U+20A6) so prices keep the same font */
+@font-face { font-family: "Bagel Fat One"; src: url(fonts/bagel-fat-one-latin-ext-400-normal.woff2) format("woff2"); font-display: swap; unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Nunito"; font-weight: 400; src: url(fonts/nunito-latin-ext-400-normal.woff2) format("woff2"); font-display: swap; unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Nunito"; font-weight: 700; src: url(fonts/nunito-latin-ext-700-normal.woff2) format("woff2"); font-display: swap; unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
 @font-face { font-family: "Nunito"; font-weight: 400; src: url(fonts/nunito-latin-400-normal.woff2) format("woff2"); font-display: swap; }
 @font-face { font-family: "Nunito"; font-weight: 700; src: url(fonts/nunito-latin-700-normal.woff2) format("woff2"); font-display: swap; }
 
@@ -15,7 +21,7 @@
   --grey-600: #6B6B73;
   --black: #111111;
 
-  --f-word: "Bagel Fat One", "Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif;   /* chunky curvy */
+  --f-word: "Bagel Fat One", "Naira", "Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif;   /* chunky curvy */
   --f-script: "Pacifico", "Brush Script MT", cursive;                                            /* script */
   --f-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
   --pad: clamp(1.25rem, 5.5vw, 6rem);
@@ -70,7 +76,7 @@ img { max-width: 100%; display: block; }
 .nav__order:hover { transform: translateY(-2px); }
 
 /* ---- Hero: clear HD video, no tint, no blur, no mask ---- */
-.hero { position: relative; min-height: 100svh; display: flex; align-items: center; overflow: hidden; background: var(--pink-deep); }
+.hero { position: relative; min-height: 100svh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(180deg, #EF93AC 0%, #EF95AF 50%, #F399B3 75%, #F5B1C6 100%); }
 .hero__media { position: absolute; inset: 0; }
 .hero__media video { width: 100%; height: 100%; object-fit: cover; object-position: 0% 50%; display: block; }
 
@@ -115,15 +121,18 @@ img { max-width: 100%; display: block; }
 
 .cake { display: flex; flex-direction: column; padding: 1rem 1rem 1.3rem; transition: transform .35s cubic-bezier(.2,.8,.2,1); }
 .cake:hover { transform: translateY(-8px); }
-.frame { border-radius: 1.7rem; overflow: hidden; background: var(--pink); border: .6rem solid var(--white); box-shadow: 0 10px 22px rgba(17,17,17,.14), inset 0 0 0 1px var(--grey-300); aspect-ratio: 1; }
+.frame { border-radius: 1.7rem; overflow: hidden; background: var(--pink); border: .6rem solid var(--white); box-shadow: 0 10px 22px rgba(17,17,17,.14), inset 0 0 0 1px var(--grey-300); aspect-ratio: 2 / 3; }
 .frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
 .cake:hover .frame img { transform: scale(1.06); }
-.frame--custom { display: grid; place-items: center; background: var(--pink-soft); }
-.frame--custom span { display: grid; place-items: center; width: 5rem; height: 5rem; border-radius: 50%; font: 400 3rem/1 var(--f-word); color: var(--black); background: var(--white); box-shadow: 8px 10px 20px rgba(17,17,17,.15), inset -4px -4px 8px rgba(239,147,172,.3); }
 .cake h3 { margin: 1.1rem .5rem .3rem; font-family: var(--f-word); font-weight: 400; font-size: 1.6rem; line-height: 1.05; }
 .cake p { margin: 0 .5rem; color: var(--grey-600); line-height: 1.5; font-weight: 600; flex: 1; }
 .cake__foot { display: flex; align-items: center; justify-content: space-between; gap: .8rem; margin: 1.1rem .5rem 0; }
 .price { font-family: var(--f-word); font-size: 1.35rem; }
+
+/* custom-cake strip under the grid */
+.custom { display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; flex-wrap: wrap; margin-top: clamp(1.4rem, 2.6vw, 2.4rem); padding: 1.5rem 1.9rem; }
+.custom h3 { margin: 0; font-family: var(--f-word); font-weight: 400; font-size: clamp(1.4rem, 2.6vw, 2rem); }
+.custom p { margin: .3rem 0 0; color: var(--grey-600); font-weight: 600; }
 
 /* ---- How to order + booking ---- */
 .order { background: var(--pink); padding: clamp(4.5rem, 9vw, 8rem) var(--pad); }
@@ -154,10 +163,15 @@ img { max-width: 100%; display: block; }
 .reveal.is-in { opacity: 1; transform: none; }
 .cake.reveal.is-in:hover { transform: translateY(-8px); }
 
+/* ---- Wide screens (wider than 16:9): show the WHOLE video, so the cake is never cropped ---- */
+@media (min-width: 900px) and (min-aspect-ratio: 16/9) {
+  .hero__media { inset: auto; top: 0; right: 0; height: 100svh; aspect-ratio: 16 / 9; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 9%); mask-image: linear-gradient(90deg, transparent 0, #000 9%); }
+}
+
 /* ---- Phones: video on top (clear, full width), text underneath ---- */
 @media (max-width: 899px) {
   .nav__links { display: none; }
-  .hero { flex-direction: column; align-items: stretch; justify-content: flex-start; }
+  .hero { flex-direction: column; align-items: stretch; justify-content: flex-start; background: var(--pink-deep); }
   .hero__media { position: relative; inset: auto; height: 58svh; min-height: 360px; -webkit-mask-image: linear-gradient(180deg, #000 82%, transparent 100%); mask-image: linear-gradient(180deg, #000 82%, transparent 100%); }
   .hero__media video { object-position: 55% 50%; }
   .hero__copy { padding: 0 var(--pad) 3rem; margin-top: -2svh; }
