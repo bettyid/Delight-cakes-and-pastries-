@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Delight Cakes &amp; Pastries | Freshly baked, made with love</title>
-  <meta name="description" content="Freshly baked cakes, brownies and pastries, beautifully crafted and made to order.">
+  <meta name="description" content="Freshly baked cakes and pastries, beautifully crafted and made to order. Order on WhatsApp.">
   <meta name="theme-color" content="#EF93AC">
   <meta property="og:title" content="Delight Cakes & Pastries">
   <meta property="og:description" content="Life is sweeter with Delight.">
@@ -16,19 +16,20 @@
 <body>
   <header class="nav" id="nav">
     <a class="nav__logo" href="#home" aria-label="Delight Cakes and Pastries, home">
-      <svg viewBox="0 0 48 48" width="38" height="38" aria-hidden="true"><path d="M10 24h28l-4 17a3 3 0 0 1-3 2H17a3 3 0 0 1-3-2z" fill="currentColor"/><path d="M12 24c-3 0-4-5 0-6 0-5 5-8 9-6 2-4 9-4 11 0 5-1 8 5 4 8-1 3-3 4-4 4z" fill="currentColor"/><circle cx="24" cy="7" r="3" fill="currentColor"/></svg>
+      <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true"><path d="M10 24h28l-4 17a3 3 0 0 1-3 2H17a3 3 0 0 1-3-2z" fill="currentColor"/><path d="M12 24c-3 0-4-5 0-6 0-5 5-8 9-6 2-4 9-4 11 0 5-1 8 5 4 8-1 3-3 4-4 4z" fill="currentColor"/><circle cx="24" cy="7" r="3" fill="currentColor"/></svg>
       <span>Delight</span>
     </a>
     <nav class="nav__links" aria-label="Main">
-      <a href="#home" aria-current="page">Home</a>
-      <a href="#bakes">Menu</a>
-      <a href="#about">About</a>
-      <a href="#order">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#cakes">Cakes</a>
+      <a href="#order">How to order</a>
+      <a href="#book">Book</a>
     </nav>
-    <a class="nav__order" href="#order">Order</a>
+    <a class="nav__order" href="#book">Order</a>
   </header>
 
   <main>
+    <!-- HERO: the HD video is the background. Nothing is laid over it. -->
     <section class="hero" id="home">
       <div class="hero__media" aria-hidden="true">
         <video autoplay muted loop playsinline preload="auto" poster="assets/poster.jpg">
@@ -43,12 +44,15 @@
         </h1>
         <p class="hero__tag">
           Freshly baked. Beautifully crafted.<br> Made with love.
-          <svg class="heart" viewBox="0 0 40 36" width="40" height="36" aria-hidden="true"><path d="M20 33C8 25 3 18 4 11 5 5 12 3 16 8l4 5 4-6c4-5 11-3 12 3 1 7-4 14-16 20z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <svg class="heart" viewBox="0 0 40 36" width="38" height="34" aria-hidden="true"><path d="M20 33C8 25 3 18 4 11 5 5 12 3 16 8l4 5 4-6c4-5 11-3 12 3 1 7-4 14-16 20z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
         </p>
-        <a class="pill" href="#order">
-          <span>Order Now</span>
-          <b aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></b>
-        </a>
+        <div class="hero__actions">
+          <a class="pill" href="#book">
+            <span>Order Now</span>
+            <b aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></b>
+          </a>
+          <a class="glass-btn" href="#cakes">See the cakes</a>
+        </div>
       </div>
     </section>
 
@@ -59,42 +63,88 @@
       </div>
     </div>
 
-    <section class="bakes" id="bakes">
-      <h2 class="title">Fresh from<br>the oven</h2>
-      <div class="cards">
-        <article class="card card--rose reveal">
-          <h3>Celebration cakes</h3>
-          <p>Layered chocolate, caramel and fruit cakes for birthdays, weddings and everything in between.</p>
-          <a class="card__link" href="#order">Order this</a>
+    <!-- CAKES: framed photos, prices and a WhatsApp order button -->
+    <!-- To change a cake: edit the name, text, price (data-price) and photo path. -->
+    <section class="cakes" id="cakes">
+      <div class="head">
+        <h2 class="title">Our cakes</h2>
+        <p class="lead">Pick your favourite and order straight on WhatsApp.</p>
+      </div>
+
+      <div class="grid">
+        <article class="clay cake reveal" data-name="Chocolate Cherry Slice" data-price="N3,500">
+          <div class="frame"><img src="assets/cakes/cake-1.webp" alt="A slice of chocolate cherry cake" width="640" height="640" loading="lazy"></div>
+          <h3>Chocolate Cherry Slice</h3>
+          <p>Layers of dark chocolate sponge, cream and cherries. One generous slice.</p>
+          <div class="cake__foot"><span class="price">&#8358;3,500</span><button class="btn-dark order-btn" type="button">Order</button></div>
         </article>
-        <article class="card card--plum reveal">
-          <h3>Brownies</h3>
-          <p>Dense, glossy and topped with toasted walnuts. Sold by the box.</p>
-          <a class="card__link" href="#order">Order this</a>
+
+        <article class="clay cake reveal" data-name="Mini Chocolate Cherry Cake" data-price="N18,000">
+          <div class="frame"><img src="assets/cakes/cake-2.webp" alt="A chocolate cherry cake with cream layers" width="640" height="640" loading="lazy"></div>
+          <h3>Mini Chocolate Cherry Cake</h3>
+          <p>A small whole cake, ideal for two to four people and little celebrations.</p>
+          <div class="cake__foot"><span class="price">&#8358;18,000</span><button class="btn-dark order-btn" type="button">Order</button></div>
         </article>
-        <article class="card card--orchid reveal">
-          <h3>Pastries</h3>
-          <p>Small bakes for tea, gifting and office treats.</p>
-          <a class="card__link" href="#order">Order this</a>
+
+        <article class="clay cake reveal" data-name="Celebration Chocolate Cherry Cake" data-price="from N45,000">
+          <div class="frame"><img src="assets/cakes/cake-3.webp" alt="A layered chocolate cherry celebration cake" width="640" height="640" loading="lazy"></div>
+          <h3>Celebration Cake</h3>
+          <p>Our full-size cake for birthdays, weddings and parties. Sizes on request.</p>
+          <div class="cake__foot"><span class="price">from &#8358;45,000</span><button class="btn-dark order-btn" type="button">Order</button></div>
+        </article>
+
+        <article class="clay cake cake--custom reveal" data-name="Custom cake" data-price="price on request">
+          <div class="frame frame--custom" aria-hidden="true"><span>+</span></div>
+          <h3>Your own design</h3>
+          <p>Tell us the flavour, size and theme and we will quote you.</p>
+          <div class="cake__foot"><span class="price">On request</span><button class="btn-dark order-btn" type="button">Ask us</button></div>
         </article>
       </div>
     </section>
 
-    <section class="about" id="about">
-      <p class="about__text reveal">Small batches, big flavour, and every order baked fresh for the day you need it.</p>
-    </section>
-
+    <!-- HOW TO ORDER + BOOKING FORM -->
     <section class="order" id="order">
-      <h2 class="title title--light">What are you<br>celebrating?</h2>
-      <p class="order__text">Tell us the date, the size and the flavour, and we will take it from there.</p>
-      <a class="pill pill--pink" href="#order"><span>Place an order</span><b aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></b></a>
+      <div class="order__inner">
+        <div class="order__text">
+          <h2 class="title">How to<br>order</h2>
+          <ol class="steps">
+            <li class="glass"><b>1</b><span>Choose your cake</span></li>
+            <li class="glass"><b>2</b><span>Send your request on WhatsApp</span></li>
+            <li class="glass"><b>3</b><span>We confirm the price and delivery</span></li>
+          </ol>
+        </div>
+
+        <form class="clay book" id="book" novalidate>
+          <h3>Book your cake</h3>
+          <label>Your name
+            <input type="text" id="f-name" name="name" autocomplete="name" required placeholder="Your name">
+          </label>
+          <label>Cake
+            <select id="f-cake" name="cake" required></select>
+          </label>
+          <label>Date needed
+            <input type="date" id="f-date" name="date" required>
+          </label>
+          <label>Notes (flavour, size, message on cake)
+            <textarea id="f-notes" name="notes" rows="3" placeholder="Tell us anything we should know"></textarea>
+          </label>
+          <p class="form__error" id="f-error" role="alert" hidden></p>
+          <button class="btn-dark btn-wide" type="submit">Send order on WhatsApp</button>
+          <p class="form__hint">This opens WhatsApp with your order already written.</p>
+        </form>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
     <span class="footer__brand">Delight Cakes &amp; Pastries</span>
+    <a href="https://wa.me/2347085372814" target="_blank" rel="noopener">WhatsApp +234 708 537 2814</a>
     <span>&copy; 2026</span>
   </footer>
+
+  <a class="wa" id="wa" href="https://wa.me/2347085372814" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.8 2 6.8L3 29l6.6-2c1.9 1 4 1.6 6.4 1.6 7.2 0 13-5.7 13-12.8S23.200 3 16 3zm0 23.200c-2.200 0-4.200-.6-5.900-1.700l-.4-.2-3.900 1.200 1.200-3.800-.3-.4a10.200 10.200 0 0 1-1.600-5.500C5.100 10.200 10 5.500 16 5.500s10.900 4.700 10.900 10.500S22 26.200 16 26.200zm6-7.700c-.3-.2-1.900-.9-2.200-1s-.5-.2-.7.200-.8 1-1 1.200-.4.200-.7.100a8.400 8.400 0 0 1-4.200-3.600c-.3-.6.300-.5.900-1.700.1-.2 0-.4 0-.5l-1-2.300c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400s-1 1-1 2.400 1 2.800 1.200 3c.1.200 2 3.100 4.900 4.300 1.800.8 2.500.8 3.400.7.600-.1 1.900-.8 2.200-1.500s.3-1.400.2-1.500-.3-.2-.6-.4z"/></svg>
+  </a>
 
   <script src="main.js" defer></script>
 </body>
