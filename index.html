@@ -4,32 +4,50 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Delight Cakes &amp; Pastries | Freshly baked, made with love</title>
-  <meta name="description" content="Freshly baked cakes and pastries, beautifully crafted and made to order. Order on WhatsApp.">
+  <meta name="description" content="Freshly baked cakes and pastries, beautifully crafted and made to order. Browse our cakes and send your order request on WhatsApp.">
   <meta name="theme-color" content="#EF93AC">
   <meta property="og:title" content="Delight Cakes & Pastries">
   <meta property="og:description" content="Life is sweeter with Delight.">
+  <meta property="og:type" content="website">
   <link rel="preload" as="image" href="assets/poster.jpg">
   <link rel="preload" href="fonts/bagel-fat-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/pacifico-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#cakes">Skip to the cakes</a>
+
+  <!-- ============ NAVIGATION (glass) ============ -->
   <header class="nav" id="nav">
     <a class="nav__logo" href="#home" aria-label="Delight Cakes and Pastries, home">
-      <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true"><path d="M10 24h28l-4 17a3 3 0 0 1-3 2H17a3 3 0 0 1-3-2z" fill="currentColor"/><path d="M12 24c-3 0-4-5 0-6 0-5 5-8 9-6 2-4 9-4 11 0 5-1 8 5 4 8-1 3-3 4-4 4z" fill="currentColor"/><circle cx="24" cy="7" r="3" fill="currentColor"/></svg>
+      <svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><path d="M10 24h28l-4 17a3 3 0 0 1-3 2H17a3 3 0 0 1-3-2z" fill="currentColor"/><path d="M12 24c-3 0-4-5 0-6 0-5 5-8 9-6 2-4 9-4 11 0 5-1 8 5 4 8-1 3-3 4-4 4z" fill="currentColor"/><circle cx="24" cy="7" r="3" fill="currentColor"/></svg>
       <span>Delight</span>
     </a>
     <nav class="nav__links" aria-label="Main">
-      <a href="#home">Home</a>
       <a href="#cakes">Cakes</a>
-      <a href="#order">How to order</a>
-      <a href="#book">Book</a>
+      <a href="#custom">Custom</a>
+      <a href="#creations">Gallery</a>
+      <a href="#faq">FAQ</a>
     </nav>
-    <a class="nav__order" href="#book">Order</a>
+    <div class="nav__actions">
+      <a class="nav__order" href="#book">Order</a>
+      <button class="nav__toggle" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path class="i-open" d="M4 8h16M4 16h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path class="i-close" d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="menu" id="menu" aria-label="Mobile" hidden>
+      <a href="#cakes">Cakes</a>
+      <a href="#custom">Custom cakes</a>
+      <a href="#book">Book your cake</a>
+      <a href="#creations">Our creations</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
   </header>
 
-  <main>
-    <!-- HERO: the HD video is the background. Nothing is laid over it. -->
+  <main id="top">
+    <!-- ============ HERO: HD video is the background ============ -->
     <section class="hero" id="home">
       <div class="hero__media" aria-hidden="true">
         <video autoplay muted loop playsinline preload="auto" poster="assets/poster.jpg">
@@ -38,20 +56,17 @@
       </div>
 
       <div class="hero__copy">
-        <p class="hero__script">Life is sweeter with <i></i></p>
+        <p class="hero__script">Life is sweeter with</p>
         <h1 class="hero__word" aria-label="Delight">
-          <span aria-hidden="true">D</span><span aria-hidden="true">e</span><span aria-hidden="true">l</span><span aria-hidden="true">i</span><span aria-hidden="true">g</span><span aria-hidden="true">h</span><span aria-hidden="true">t</span>
+          <span aria-hidden="true">D</span><span aria-hidden="true">e</span><span aria-hidden="true">l</span><span aria-hidden="true">i</span><span aria-hidden="true">g</span><span aria-hidden="true">h</span><span aria-hidden="true">t</span><span aria-hidden="true">.</span>
         </h1>
-        <p class="hero__tag">
-          Freshly baked. Beautifully crafted.<br> Made with love.
-          <svg class="heart" viewBox="0 0 40 36" width="38" height="34" aria-hidden="true"><path d="M20 33C8 25 3 18 4 11 5 5 12 3 16 8l4 5 4-6c4-5 11-3 12 3 1 7-4 14-16 20z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
-        </p>
+        <p class="hero__tag">Freshly baked. Beautifully crafted. Made with love.</p>
         <div class="hero__actions">
-          <a class="pill" href="#book">
-            <span>Order Now</span>
-            <b aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></b>
+          <a class="pill" href="#cakes">
+            <span>Explore Our Cakes</span>
+            <b aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></b>
           </a>
-          <a class="glass-btn" href="#cakes">See the cakes</a>
+          <a class="btn btn--dark" href="#book">Order Now</a>
         </div>
       </div>
     </section>
@@ -63,93 +78,260 @@
       </div>
     </div>
 
-    <!-- CAKES: framed photos, prices and a WhatsApp order button -->
-    <!-- To change a cake: edit the name, text, price (data-price) and photo path. -->
-    <section class="cakes" id="cakes">
-      <div class="head">
-        <h2 class="title">Our cakes</h2>
-        <p class="lead">Pick your favourite and order straight on WhatsApp.</p>
+    <!-- ============ CAKE CATALOGUE ============ -->
+    <!-- To edit a cake: change data-name / data-price, the text, the price and the photo (assets/cakes/). -->
+    <section class="cakes section" id="cakes" aria-labelledby="cakes-title">
+      <div class="head reveal">
+        <h2 class="title" id="cakes-title">Our cakes</h2>
+        <p class="lead">Choose your favourite, then tell us the details. We will confirm everything with you directly.</p>
       </div>
 
-      <div class="grid">
-        <article class="clay cake reveal" data-name="Chocolate Strawberry Cake" data-price="N55,000">
-          <div class="frame"><img src="assets/cakes/cake-1.webp" alt="A chocolate cake with a ganache drip, strawberries and chocolate shards" width="640" height="960" loading="lazy"></div>
-          <h3>Chocolate Strawberry Cake</h3>
-          <p>A chocolate buttercream cake with a glossy ganache drip, fresh strawberries and chocolate shards.</p>
-          <div class="cake__foot"><span class="price">&#8358;55,000</span><button class="btn-dark order-btn" type="button">Order</button></div>
+      <div class="track" role="region" aria-label="Our cakes (swipe sideways on phones)" tabindex="0">
+        <article class="card reveal" data-name="Chocolate Strawberry Cake" data-price="&#8358;55,000">
+          <div class="card__img"><img src="assets/cakes/cake-1.webp" alt="A chocolate cake with a ganache drip, strawberries and chocolate shards" width="640" height="960" loading="lazy" decoding="async"></div>
+          <div class="card__body">
+            <h3>Chocolate Strawberry Cake</h3>
+            <p>A chocolate buttercream cake with a glossy ganache drip, fresh strawberries and chocolate shards.</p>
+            <div class="card__foot"><span class="price">&#8358;55,000</span><button class="btn btn--dark js-order" type="button" aria-label="Order Chocolate Strawberry Cake">Order</button></div>
+          </div>
         </article>
-        <article class="clay cake reveal" data-name="Red Velvet Slice" data-price="N6,000">
-          <div class="frame"><img src="assets/cakes/cake-2.webp" alt="A slice of red velvet cake with cream frosting and strawberries" width="640" height="960" loading="lazy"></div>
-          <h3>Red Velvet Slice</h3>
-          <p>Soft red velvet layers with creamy frosting and a fresh strawberry on top. One generous slice.</p>
-          <div class="cake__foot"><span class="price">&#8358;6,000</span><button class="btn-dark order-btn" type="button">Order</button></div>
-        </article>
-        <article class="clay cake reveal" data-name="Three-Tier Wedding Cake" data-price="N200,000">
-          <div class="frame"><img src="assets/cakes/cake-3.webp" alt="A three-tier white wedding cake with white roses" width="640" height="960" loading="lazy"></div>
-          <h3>Three-Tier Wedding Cake</h3>
-          <p>Elegant white buttercream with pearl details and fresh white roses. Made for weddings.</p>
-          <div class="cake__foot"><span class="price">&#8358;200,000</span><button class="btn-dark order-btn" type="button">Order</button></div>
-        </article>
-        <article class="clay cake reveal" data-name="Pearl & Rose Cake" data-price="N60,000">
-          <div class="frame"><img src="assets/cakes/cake-4.webp" alt="A grey drip cake decorated with ivory roses and pearls" width="640" height="960" loading="lazy"></div>
-          <h3>Pearl &amp; Rose Cake</h3>
-          <p>A soft grey drip cake finished with ivory roses, flowers and pearls.</p>
-          <div class="cake__foot"><span class="price">&#8358;60,000</span><button class="btn-dark order-btn" type="button">Order</button></div>
-        </article>
-      </div>
 
-      <div class="clay custom reveal" data-name="Custom cake">
-        <div>
-          <h3>Want something different?</h3>
-          <p>Tell us the flavour, size and theme and we will quote you.</p>
-        </div>
-        <button class="btn-dark order-btn" type="button">Ask us</button>
+        <article class="card reveal" data-name="Red Velvet Slice" data-price="&#8358;6,000">
+          <div class="card__img"><img src="assets/cakes/cake-2.webp" alt="A slice of red velvet cake with cream frosting and strawberries" width="640" height="960" loading="lazy" decoding="async"></div>
+          <div class="card__body">
+            <h3>Red Velvet Slice</h3>
+            <p>Soft red velvet layers with creamy frosting and a fresh strawberry on top. One generous slice.</p>
+            <div class="card__foot"><span class="price">&#8358;6,000</span><button class="btn btn--dark js-order" type="button" aria-label="Order Red Velvet Slice">Order</button></div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-name="Three-Tier Wedding Cake" data-price="&#8358;200,000">
+          <div class="card__img"><img src="assets/cakes/cake-3.webp" alt="A three-tier white wedding cake with white roses" width="640" height="960" loading="lazy" decoding="async"></div>
+          <div class="card__body">
+            <h3>Three-Tier Wedding Cake</h3>
+            <p>Elegant white buttercream with pearl details and fresh white roses. Made for weddings.</p>
+            <div class="card__foot"><span class="price">&#8358;200,000</span><button class="btn btn--dark js-order" type="button" aria-label="Order Three-Tier Wedding Cake">Order</button></div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-name="Pearl &amp; Rose Cake" data-price="&#8358;60,000">
+          <div class="card__img"><img src="assets/cakes/cake-4.webp" alt="A grey drip cake decorated with ivory roses and pearls" width="640" height="960" loading="lazy" decoding="async"></div>
+          <div class="card__body">
+            <h3>Pearl &amp; Rose Cake</h3>
+            <p>A soft grey drip cake finished with ivory roses, flowers and pearls.</p>
+            <div class="card__foot"><span class="price">&#8358;60,000</span><button class="btn btn--dark js-order" type="button" aria-label="Order Pearl and Rose Cake">Order</button></div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- HOW TO ORDER + BOOKING FORM -->
-    <section class="order" id="order">
-      <div class="order__inner">
-        <div class="order__text">
-          <h2 class="title">How to<br>order</h2>
-          <ol class="steps">
-            <li class="glass"><b>1</b><span>Choose your cake</span></li>
-            <li class="glass"><b>2</b><span>Send your request on WhatsApp</span></li>
-            <li class="glass"><b>3</b><span>We confirm the price and delivery</span></li>
+    <!-- ============ CUSTOM CAKES ============ -->
+    <section class="custom section" id="custom" aria-labelledby="custom-title">
+      <div class="custom__inner">
+        <figure class="custom__img reveal">
+          <img src="assets/cakes/cake-4.webp" alt="A decorated custom cake with ivory roses and pearls" width="640" height="960" loading="lazy" decoding="async">
+        </figure>
+        <div class="custom__text reveal">
+          <h2 class="title" id="custom-title">Dream It.<br>We&rsquo;ll Bake It.</h2>
+          <p class="lead">Have something special in mind? Tell us what you&rsquo;re imagining, and we&rsquo;ll help bring your cake idea to life.</p>
+          <ol class="mini-steps">
+            <li><b>1</b><span>Share your idea, theme and date</span></li>
+            <li><b>2</b><span>We confirm the details and price with you</span></li>
+            <li><b>3</b><span>We bake your cake</span></li>
           </ol>
+          <div class="actions">
+            <button class="btn btn--dark btn--lg js-custom" type="button">Request a Custom Cake</button>
+            <a class="link" href="#book">Go to the booking form</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW TO ORDER + BOOKING FORM ============ -->
+    <section class="order section" id="order" aria-labelledby="order-title">
+      <div class="order__grid">
+        <div class="order__intro reveal">
+          <h2 class="title" id="order-title">How to<br>order</h2>
+          <ol class="steps">
+            <li><b>1</b><span>Choose your cake</span></li>
+            <li><b>2</b><span>Fill in the booking form and review it</span></li>
+            <li><b>3</b><span>Send it on WhatsApp and we confirm the price and delivery</span></li>
+          </ol>
+          <p class="note">No account or sign-up needed. Sending the form opens WhatsApp, and your order is only confirmed once we reply to you directly.</p>
         </div>
 
-        <form class="clay book" id="book" novalidate>
-          <h3>Book your cake</h3>
-          <label>Your name
-            <input type="text" id="f-name" name="name" autocomplete="name" required placeholder="Your name">
-          </label>
-          <label>Cake
-            <select id="f-cake" name="cake" required></select>
-          </label>
-          <label>Date needed
-            <input type="date" id="f-date" name="date" required>
-          </label>
-          <label>Notes (flavour, size, message on cake)
-            <textarea id="f-notes" name="notes" rows="3" placeholder="Tell us anything we should know"></textarea>
-          </label>
-          <p class="form__error" id="f-error" role="alert" hidden></p>
-          <button class="btn-dark btn-wide" type="submit">Send order on WhatsApp</button>
-          <p class="form__hint">This opens WhatsApp with your order already written.</p>
+        <form class="form reveal" id="book" novalidate aria-labelledby="book-title">
+          <h3 id="book-title">Book your cake</h3>
+
+          <div class="row">
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input type="text" id="f-name" name="name" autocomplete="name" placeholder="e.g. Amaka Obi" aria-describedby="e-name" required>
+              <p class="err" id="e-name" hidden></p>
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone number</label>
+              <input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="e.g. 0801 234 5678" aria-describedby="e-phone" required>
+              <p class="err" id="e-phone" hidden></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-cake">Cake</label>
+            <select id="f-cake" name="cake" aria-describedby="e-cake" required></select>
+            <p class="err" id="e-cake" hidden></p>
+          </div>
+
+          <div class="row row--3">
+            <div class="field">
+              <label for="f-size">Cake size <span class="opt">(optional)</span></label>
+              <input type="text" id="f-size" name="size" placeholder="e.g. 8 inch, or serves 20">
+            </div>
+            <div class="field">
+              <label for="f-qty">Quantity</label>
+              <div class="qty">
+                <button type="button" class="qty__btn" id="qty-minus" aria-label="Decrease quantity">&minus;</button>
+                <input type="number" id="f-qty" name="qty" value="1" min="1" max="99" inputmode="numeric" aria-describedby="e-qty" required>
+                <button type="button" class="qty__btn" id="qty-plus" aria-label="Increase quantity">+</button>
+              </div>
+              <p class="err" id="e-qty" hidden></p>
+            </div>
+            <div class="field">
+              <label for="f-flavour">Flavour <span class="opt">(optional)</span></label>
+              <input type="text" id="f-flavour" name="flavour" placeholder="e.g. Vanilla, chocolate">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-date">Date needed</label>
+            <input type="date" id="f-date" name="date" aria-describedby="e-date" required>
+            <p class="err" id="e-date" hidden></p>
+          </div>
+
+          <fieldset class="field fulfil" aria-describedby="e-fulfil">
+            <legend>Delivery or pickup</legend>
+            <div class="seg">
+              <input type="radio" id="f-pickup" name="fulfil" value="Pickup"><label for="f-pickup">Pickup</label>
+              <input type="radio" id="f-delivery" name="fulfil" value="Delivery"><label for="f-delivery">Delivery</label>
+            </div>
+            <p class="err" id="e-fulfil" hidden></p>
+          </fieldset>
+
+          <div class="field" id="loc-wrap" hidden>
+            <label for="f-loc">Delivery location</label>
+            <input type="text" id="f-loc" name="location" autocomplete="street-address" placeholder="Area, street or landmark" aria-describedby="e-loc">
+            <p class="err" id="e-loc" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="f-img">Reference photo <span class="opt">(optional, for custom cakes)</span></label>
+            <input type="file" id="f-img" name="image" accept="image/*" aria-describedby="e-img h-img">
+            <div class="prev" id="prev" hidden><img id="prev-img" alt="Your chosen reference photo" width="64" height="64"><button type="button" class="prev__x" id="prev-x" aria-label="Remove reference photo">&times;</button></div>
+            <p class="hint" id="h-img">This form can&rsquo;t attach files to WhatsApp, so you&rsquo;ll send the photo in the chat after it opens.</p>
+            <p class="err" id="e-img" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="f-notes">Notes <span class="opt">(optional)</span></label>
+            <textarea id="f-notes" name="notes" rows="3" placeholder="Message on the cake, colours, allergies, anything we should know"></textarea>
+          </div>
+
+          <button class="btn btn--dark btn--lg btn--wide" type="submit">Review your order</button>
+          <p class="hint hint--center">You&rsquo;ll see a summary first. Nothing is sent until you choose to open WhatsApp.</p>
         </form>
+      </div>
+    </section>
+
+    <!-- ============ OUR CREATIONS (gallery) ============ -->
+    <!-- Add real photos in main.js (GALLERY) and put the files in assets/gallery/. Until then, placeholders show. -->
+    <section class="creations section" id="creations" aria-labelledby="creations-title">
+      <div class="head reveal">
+        <h2 class="title" id="creations-title">Our Creations</h2>
+        <p class="lead" id="creations-lead">A look at cakes from our kitchen.</p>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <!-- Only real reviews supplied by the business belong here (TESTIMONIALS in main.js). -->
+    <section class="reviews section" id="reviews" aria-labelledby="reviews-title">
+      <div class="head reveal">
+        <h2 class="title" id="reviews-title">Sweet Words From Our Customers</h2>
+      </div>
+      <div class="quotes" id="quotes"></div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <!-- Answers below point customers to confirmation on WhatsApp. Replace with your real policies when ready. -->
+    <section class="faq section" id="faq" aria-labelledby="faq-title">
+      <div class="faq__grid">
+        <div class="head reveal">
+          <h2 class="title" id="faq-title">Good to know</h2>
+          <p class="lead">Questions about ordering? Start here, or message us on WhatsApp.</p>
+        </div>
+        <div class="faq__list reveal">
+          <details><summary>How do I place an order?</summary><p>Choose a cake, fill in the booking form and review your summary. Then send it to us on WhatsApp. You don&rsquo;t need an account.</p></details>
+          <details><summary>How early should I book a cake?</summary><p>The earlier the better, especially for celebration and custom cakes. Add your date to the booking form and we will confirm whether we can make it.</p></details>
+          <details><summary>Can I request a customised cake?</summary><p>Yes. Choose &ldquo;Custom cake&rdquo; in the form, tell us your idea, and we will quote you. You can send a reference photo in the WhatsApp chat.</p></details>
+          <details><summary>Do you offer delivery?</summary><p>You can choose delivery or pickup in the booking form. We will confirm what is available for your location when we reply.</p></details>
+          <details><summary>How do I confirm my order?</summary><p>Your order is confirmed only after we reply to you on WhatsApp with the details and price. Sending the form alone does not confirm it.</p></details>
+          <details><summary>What payment methods are accepted?</summary><p>We will share payment details with you on WhatsApp when we confirm your order.</p></details>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <span class="footer__brand">Delight Cakes &amp; Pastries</span>
-    <a href="https://wa.me/2347085372814" target="_blank" rel="noopener">WhatsApp +234 708 537 2814</a>
-    <span>&copy; 2026</span>
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="nav__logo footer__logo" href="#home" aria-label="Delight Cakes and Pastries, back to top">
+          <svg viewBox="0 0 48 48" width="30" height="30" aria-hidden="true"><path d="M10 24h28l-4 17a3 3 0 0 1-3 2H17a3 3 0 0 1-3-2z" fill="currentColor"/><path d="M12 24c-3 0-4-5 0-6 0-5 5-8 9-6 2-4 9-4 11 0 5-1 8 5 4 8-1 3-3 4-4 4z" fill="currentColor"/><circle cx="24" cy="7" r="3" fill="currentColor"/></svg>
+          <span>Delight</span>
+        </a>
+        <p>Freshly baked cakes and pastries, beautifully crafted and made with love.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#cakes">Cakes</a>
+        <a href="#custom">Custom cakes</a>
+        <a href="#book">Book your cake</a>
+        <a href="#creations">Our creations</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="footer__contact">
+        <p class="footer__label">Order on WhatsApp</p>
+        <a href="https://wa.me/2347085372814" target="_blank" rel="noopener">+234 708 537 2814</a>
+        <!-- Add the Instagram link here when you have it -->
+      </div>
+    </div>
+    <p class="footer__copy">&copy; 2026 Delight Cakes &amp; Pastries. All rights reserved.</p>
   </footer>
 
-  <a class="wa" id="wa" href="https://wa.me/2347085372814" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
-    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.8 2 6.8L3 29l6.6-2c1.9 1 4 1.6 6.4 1.6 7.2 0 13-5.7 13-12.8S23.200 3 16 3zm0 23.200c-2.200 0-4.200-.6-5.900-1.700l-.4-.2-3.900 1.200 1.200-3.800-.3-.4a10.200 10.200 0 0 1-1.600-5.500C5.100 10.200 10 5.500 16 5.500s10.900 4.700 10.900 10.500S22 26.200 16 26.200zm6-7.700c-.3-.2-1.900-.9-2.200-1s-.5-.2-.7.200-.8 1-1 1.200-.4.200-.7.100a8.400 8.400 0 0 1-4.200-3.600c-.3-.6.300-.5.900-1.700.1-.2 0-.4 0-.5l-1-2.300c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400s-1 1-1 2.400 1 2.800 1.200 3c.1.200 2 3.100 4.900 4.300 1.800.8 2.500.8 3.400.7.600-.1 1.900-.8 2.200-1.500s.3-1.400.2-1.500-.3-.2-.6-.4z"/></svg>
+  <a class="wa" id="wa" href="https://wa.me/2347085372814" target="_blank" rel="noopener" aria-label="Chat with Delight on WhatsApp">
+    <svg viewBox="0 0 32 32" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.8 2 6.8L3 29l6.6-2c1.9 1 4 1.6 6.4 1.6 7.2 0 13-5.7 13-12.8S23.200 3 16 3zm0 23.200c-2.200 0-4.200-.6-5.900-1.700l-.4-.2-3.900 1.200 1.200-3.800-.3-.4a10.200 10.200 0 0 1-1.600-5.500C5.100 10.200 10 5.500 16 5.500s10.900 4.700 10.900 10.500S22 26.200 16 26.200zm6-7.700c-.3-.2-1.900-.9-2.200-1s-.5-.2-.7.200-.8 1-1 1.200-.4.200-.7.100a8.400 8.400 0 0 1-4.200-3.600c-.3-.6.300-.5.900-1.700.1-.2 0-.4 0-.5l-1-2.300c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400s-1 1-1 2.400 1 2.800 1.200 3c.1.200 2 3.100 4.900 4.300 1.800.8 2.500.8 3.400.7.600-.1 1.900-.8 2.200-1.500s.3-1.400.2-1.500-.3-.2-.6-.4z"/></svg>
   </a>
+
+  <!-- Order summary (shown before WhatsApp opens) -->
+  <dialog class="summary" id="summary" aria-labelledby="sum-title">
+    <div class="summary__card">
+      <h2 id="sum-title">Review your order</h2>
+      <div id="sum-review">
+        <dl class="sum-list" id="sum-list"></dl>
+        <p class="sum-note">Opening WhatsApp does not confirm your order. We will reply to confirm availability and the final price with you directly.</p>
+        <div class="sum-actions">
+          <button class="btn btn--ghost" type="button" id="sum-edit">Edit details</button>
+          <button class="btn btn--dark" type="button" id="sum-send">Send on WhatsApp</button>
+        </div>
+      </div>
+      <div id="sum-sent" hidden>
+        <p class="sum-note sum-note--big">WhatsApp should now be open with your request ready to send. <strong>Your order is not confirmed yet.</strong> Tap send in WhatsApp, and we will confirm availability and the price with you.</p>
+        <p class="sum-note">Nothing happened? <a id="sum-link" href="#" target="_blank" rel="noopener">Open WhatsApp again</a>.</p>
+        <div class="sum-actions"><button class="btn btn--dark" type="button" id="sum-done">Done</button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="main.js" defer></script>
 </body>
